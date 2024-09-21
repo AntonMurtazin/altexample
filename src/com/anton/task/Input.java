@@ -17,6 +17,9 @@ public class Input {
         String value1 = tokens[0].trim().replace("\"","");
         char operation = tokens[1].trim().charAt(0);
         String value2 = tokens[1].trim().substring(1).replace("\"","");
+        if (value1.length() > 10 || value2.length() > 10) {
+            throw new IllegalArgumentException("Длина строки не должна превышать 10 символов.");
+        }
 
         System.out.println("Output:");
         switch(operation) {
@@ -30,7 +33,7 @@ public class Input {
     }
 
     public static void sum(String value1, String value2) {
-        String sum = value1 + value2;
+        String sum = value1.trim() + value2.trim();
         String result = String.format("\"%s\"", sum);
         System.out.println(result);
     }
@@ -54,6 +57,9 @@ public class Input {
         }
         String nums = value1.repeat(number);
         String result = String.format("\"%s\"", nums);
+        if (result.length() > 40) {
+            result = result.substring(0, 39) + "...";
+        }
         System.out.println(result);
     }
 
