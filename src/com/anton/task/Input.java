@@ -58,7 +58,7 @@ public class Input {
         String nums = value1.repeat(number);
         String result = String.format("\"%s\"", nums);
         if (result.length() > 40) {
-            result = result.substring(0, 39) + "...";
+            result = result.substring(0, 41) + "...";
         }
         System.out.println(result);
     }
