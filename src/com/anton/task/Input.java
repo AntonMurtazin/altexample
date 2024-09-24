@@ -39,7 +39,7 @@ public class Input {
     }
 
     public static void minus(String value1, String value2) {
-        String minus = value1.replace(value2,  "");
+        String minus = value1.replace(value2.trim(),  "");
         String result = String.format("\"%s\"", minus);
         System.out.println(result);
 
